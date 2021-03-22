@@ -1,0 +1,5 @@
+server:
+  port: 5271
+spring:
+  application:
+    name: couchbase-sample
