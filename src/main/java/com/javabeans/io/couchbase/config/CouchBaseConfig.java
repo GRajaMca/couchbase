@@ -1,5 +1,6 @@
 package com.javabeans.io.couchbase.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.couchbase.config.AbstractCouchbaseConfiguration;
 import org.springframework.data.couchbase.repository.config.EnableCouchbaseRepositories;
@@ -7,23 +8,32 @@ import org.springframework.data.couchbase.repository.config.EnableCouchbaseRepos
 @Configuration
 @EnableCouchbaseRepositories
 public class CouchBaseConfig extends AbstractCouchbaseConfiguration {
+    @Value("${couchbase.url}")
+    private String connectionString;
+    @Value("${couchbase.username}")
+    private String userName;
+    @Value("${couchbase.password}")
+    private String password;
+    @Value("${couchbase.bucket}")
+    private String bucket;
+
     @Override
     public String getConnectionString() {
-        return "couchdb";
+        return this.connectionString;
     }
 
     @Override
     public String getUserName() {
-        return "admin";
+        return this.userName;
     }
 
     @Override
     public String getPassword() {
-        return "password";
+        return this.password;
     }
 
     @Override
     public String getBucketName() {
-        return "sample";
+        return this.bucket;
     }
 }

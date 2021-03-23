@@ -3,3 +3,8 @@ server:
 spring:
   application:
     name: couchbase-sample
+couchbase:
+  url: couchdb
+  username: admin
+  password: password
+  bucket: sample
