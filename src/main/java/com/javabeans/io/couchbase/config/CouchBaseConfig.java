@@ -8,6 +8,7 @@ import org.springframework.data.couchbase.repository.config.EnableCouchbaseRepos
 @Configuration
 @EnableCouchbaseRepositories
 public class CouchBaseConfig extends AbstractCouchbaseConfiguration {
+
     @Value("${couchbase.url}")
     private String connectionString;
     @Value("${couchbase.username}")

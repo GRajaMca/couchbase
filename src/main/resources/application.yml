@@ -5,6 +5,6 @@ spring:
     name: couchbase-sample
 couchbase:
   url: couchdb
-  username: admin
-  password: password
+  username: developer
+  password: developer
   bucket: sample
